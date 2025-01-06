@@ -35,10 +35,11 @@ async function fetchNews(query) {
         if (data.articles) {
             bindData(data.articles);
         } else {
-            console.error("No articles found.");
+            displayMessage("No articles found.");
         }
     } catch (error) {
         console.error("Error fetching news:", error);
+        displayMessage("Error fetching news, please try again later.");
     }
 }
 
@@ -73,7 +74,7 @@ function displayPage(page) {
 
     cardsContainer.innerHTML = "";
     const start = (page - 1) * articlesPerPage;
-    const end = start + articlesPerPage;
+    const end = Math.min(start + articlesPerPage, currentArticles.length); // Prevent overflow
     const articlesToDisplay = currentArticles.slice(start, end);
 
     articlesToDisplay.forEach((article) => {
@@ -213,7 +214,12 @@ function updateActiveCategory(category) {
 const searchButton = document.getElementById("search-icon");
 const searchText = document.getElementById("search-text");
 
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", handleSearch);
+searchText.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") handleSearch();
+});
+
+function handleSearch() {
     const query = searchText.value.trim();
     if (!query) {
         displayMessage("Please enter a search query.");
@@ -224,22 +230,7 @@ searchButton.addEventListener("click", () => {
         return;
     }
     fetchNews(query);
-});
-
-searchText.addEventListener("click", () => {
-    const query = searchText.value.trim();
-    if (!query) {
-        displayMessage("Please enter a search query.");
-        return;
-    }
-    if (query.length < 3) {
-        displayMessage("Please enter at least 3 characters.");
-        return;
-    }
-    fetchNews(query);
-});
-
-
+}
 
 function displayMessage(message) {
     const errorElement = document.createElement("div");
@@ -256,14 +247,21 @@ const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
 themeToggle.addEventListener("click", () => {
-   
     document.body.classList.toggle("night");
-
-    
+    const theme = document.body.classList.contains("night") ? "night" : "light";
+    localStorage.setItem("theme", theme); 
     if (document.body.classList.contains("night")) {
-      
-        themeIcon.src = "sun.png"; 
+        themeIcon.src = "sun.png";
     } else {
-        themeIcon.src = "night-mode.png"; 
+        themeIcon.src = "night-mode.png";
     }
 });
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "night") {
+    document.body.classList.add("night");
+    themeIcon.src = "sun.png";
+} else {
+    document.body.classList.remove("night");
+    themeIcon.src = "night-mode.png";
+}
