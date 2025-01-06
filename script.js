@@ -21,7 +21,7 @@ window.onload = function () {
     initializeCategorySidebar(preferredCategories); 
 };
 
-const API_KEY = "a93ba1a35511463587e276b30b7ebd34";
+const API_KEY = "704f089032214b16ab56c6f753b33b71";
 const url = "https://newsapi.org/v2/everything?q=";
 
 let currentPage = 1;
