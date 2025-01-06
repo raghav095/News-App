@@ -11,7 +11,6 @@ body {
     background-color: #D1C6B1;
 }
 
-
 .sidebar {
     height: 100%;
     width: 0;
@@ -60,7 +59,6 @@ body {
     font-size: medium;
 }
 
-
 .openbtn {
     font-size: 15px;
     cursor: pointer;
@@ -91,7 +89,6 @@ body {
     background-color: #FFC107;
     color: #000;
 }
-
 
 p {
     font-family: "Poppins", sans-serif;
@@ -172,7 +169,6 @@ nav:hover {
     box-shadow: 0 0 5px rgba(207, 33, 51, 0.6); 
 }
 
-
 .search-button {
     flex-shrink: 0;
     background-color: #cf2133;
@@ -185,8 +181,6 @@ nav:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 #search-button img {
@@ -200,7 +194,6 @@ nav:hover {
 }
 
 #themeToggle{
-
     width: 40px;
     height: 40px;
     border-radius: 50px;
@@ -263,7 +256,6 @@ main {
     text-align: center;
 }
 
-/* Pagination Controls */
 .pagination-controls {
     display: flex;
     justify-content: center; 
@@ -299,7 +291,43 @@ main {
     cursor: not-allowed;
 }
 
-/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .main-nav {
+        flex-direction: column;
+    }
+
+    .left-half,
+    .right-half {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .news-input {
+        width: 90%;
+    }
+
+    .search-button {
+        width: auto;
+    }
+
+    .backhome {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 48%;
+    }
+
+    .pagination-controls {
+        gap: 15px;
+    }
+
+    .pagination-button {
+        font-size: 18px;
+    }
+}
+
 @media (max-width: 768px) {
     .main-nav {
         flex-direction: column;
@@ -351,32 +379,6 @@ main {
 
     .pagination-button {
         width: 100%;
-    }
-}
-
-@media (min-width: 768px) {
-    .main-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .left-half {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .backhome {
-        font-size: 15px;
-        padding: 9px 11px;
-        background-color: #cf2133;
-        border-radius: 5px;
-    }
-
-    .backhome:hover {
-        background-color: #FFC107;
-        color: #000000;
     }
 }
 
