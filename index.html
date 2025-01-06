@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container">
+            <div class="left-half">
+                <a href="home.html">
+                    <img src="newspaper_2540874.png" alt="company logo" id="navbar-logo">
+                </a>
+                <a class="backhome" href="javascript:void(0);" onclick="window.location.reload();">
+                    <h2>INSIGHTSPHERE</h2>
+                </a>
+            </div>
+    
+            <div class="right-half">
+                <input id="search-text" type="text" class="news-input" placeholder="Latest news - Cricket" >
+                <button id="search-button" class="search-button">
+                    <img src="magnifying-glass_12080183.png" alt="Search" id="search-icon">
+                </button>
+            </div>
+
+            <button id="themeToggle">
+                <img id="themeIcon" src="night-mode.png" alt="Switch Theme" />
+            </button>
+        </div>
+    </nav>
+    
+
+<main id="main-content">
+    <div class="cards-container container" id="cards-container">
+        <!-- Articles will be injected here -->
+    </div>
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls">
+        <button id="previous-button" class="pagination-button">Previous</button>
+        <button id="next-button" class="pagination-button">Next</button>
+    </div>
+</main>
+
+<div id="sidebar" class="sidebar">
+    <h2 id="sidebar-user-info" class="user-info"></h2>
+    <h3 class="select">SELECT</h3>
+    <ul id="category-list">
+        <li onclick="filterByCategory('Technology')">Technology</li>
+        <li onclick="filterByCategory('Business')">Business</li>
+        <li onclick="filterByCategory('Sports')">Sports</li>
+        <li onclick="filterByCategory('Health')">Health</li>
+        <li onclick="filterByCategory('Science')">Science</li>
+        <li onclick="filterByCategory('Entertainment')">Entertainment</li>
+        <li onclick="filterByCategory('Politics')">Politics</li>
+        <li onclick="filterByCategory('Cricket')">Cricket</li>
+        <li onclick="filterByCategory('Finance')">Finance</li>
+        <li onclick="filterByCategory('Movies')">Movies</li>
+        <li onclick="filterByCategory('Football')">Football</li>
+    </ul>
+</div>
+
+<!-- Sidebar Button -->
+<button class="openbtn" onclick="toggleSidebar()"> 
+    <img src="people_4740890.png" alt="user">
+   
+</button>
+
+<!-- Template for News Cards -->
+<template id="template-news-card">
+    <div class="card">
+        <div class="card-header">
+            <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+        </div>
+        <div class="card-content">
+            <h3 id="news-title">This is the Title</h3>
+            <h6 class="news-source" id="news-source">Source · Date</h6>
+            <p class="news-desc" id="news-desc">Description...</p>
+            <div class="sentiment-score" id="sentiment-score">Sentiment: Neutral</div>
+        </div>
+    </div>
+</template>
+
+<script src="script.js"></script>
+</body>
+</html>

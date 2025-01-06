@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App - Registration</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+      <div class="leftnav">
+         <img src="newspaper_2540874.png" alt="company logo">
+         <H2 class="insite">INSIGHTSPHERE</H2>
+      </div>
+
+      
+
+    </nav>
+
+    <div class="container">
+        <div class="left-half">
+            <img src="mainimg.png" alt="Image" class="img-responsive" id="leftimg">
+        </div>
+
+        <div class="right-half">
+            <div class="registration-container">
+                <h2>CREATE YOUR ACCOUNT</h2>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+                <button id="register-btn">REGISTER</button>
+            </div>
+
+            <div class="preferences-container" style="display: none;">
+                <h2 class="sp">SELECT  PREFERENCES</h2>
+                <div id="preferences-form">
+                    <form>
+                        <div class="form-group">
+                            <div class="preference-item card">
+                                <input type="checkbox" id="tech" value="Technology">
+                                <label for="tech">
+                                    <img src="technology.png" alt="Technology" class="category-img">
+                                    Technology
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="sports" value="Sports">
+                                <label for="sports">
+                                    <img src="sports.png" alt="Sports" class="category-img">
+                                    Sports
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="business" value="Business">
+                                <label for="business">
+                                    <img src="bussines.png" alt="Business" class="category-img">
+                                    Business
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="entertainment" value="Entertainment">
+                                <label for="entertainment">
+                                    <img src="entertainment .png" alt="Entertainment" class="category-img">
+                                    Entertainment
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="politics" value="Politics">
+                                <label for="politics">
+                                    <img src="politic.png" alt="Politics" class="category-img">
+                                    Politics
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="health" value="Health">
+                                <label for="health">
+                                    <img src="health.png" alt="Health" class="category-img">
+                                    Health
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="science" value="Science">
+                                <label for="science">
+                                    <img src="science.png" alt="Science" class="category-img">
+                                    Science
+                                </label>
+                            </div>
+
+                            <div class="preference-item card">
+                                <input type="checkbox" id="travel" value="Travel">
+                                <label for="travel">
+                                    <img src="travel.png" alt="Travel" class="category-img">
+                                    Travel
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="btnprefer">
+                            <button type="button" id="save-preferences-btn">Save Preferences</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 News App. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>
