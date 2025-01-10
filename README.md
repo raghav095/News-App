@@ -16,5 +16,13 @@ A simple and responsive News App that allows users to read the latest news artic
 - Click on any article to read more details.
 
 
+## Screenshots
+
+![Screenshot 1](homepic.png)
+
+![Screenshot 2](selectpreferences.png)
+
+![Screenshot 2](mainnews.png)
+
 
 
